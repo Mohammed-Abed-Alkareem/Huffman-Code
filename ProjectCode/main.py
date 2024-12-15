@@ -8,8 +8,8 @@ if __name__ == "__main__":
     with open(docx_file, "rb") as file:
         result = mammoth.extract_raw_text(file)
         text = result.value
-    print(text)
-    print(type(text))
+    # print(text)
+    # print(type(text))
 
     print("Number of characters in the text: ", len(text))
     
@@ -37,25 +37,13 @@ if __name__ == "__main__":
     print(f"Total Bits (Huffman): {huffman.total_bits_huffman()}")
     print(f"Compression Percentage: {huffman.compression_percentage():.2f}%")
 
-    print("\nFrequencies:")
-
-    frequencies_table = PrettyTable()
-    frequencies_table.field_names = ["Symbol", "Frequency"]
-    for char, freq in huffman.frequencies.items():
-        frequencies_table.add_row([char, freq])
-    print(frequencies_table)
 
 
-
-
-    
-
-    
 
 
     print("\nResults Table:")
     results_table = PrettyTable()
-    results_table.field_names = ["Symbol", "Probability", "Codeword", "Length"]
+    results_table.field_names = ["Symbol", "Frequrncy", "Probability", "Codeword", "Length"]
     for row in huffman.results_table():
         results_table.add_row(row)
     print(results_table)
@@ -77,25 +65,10 @@ if __name__ == "__main__":
     print(f"Total Bits (Huffman): {huffman.total_bits_huffman()}")
     print(f"Compression Percentage: {huffman.compression_percentage():.2f}%")
 
-    print("\nFrequencies:")
-
-    frequencies_table = PrettyTable()
-    frequencies_table.field_names = ["Symbol", "Frequency"]
-    for char, freq in huffman.frequencies.items():
-        frequencies_table.add_row([char, freq])
-    print(frequencies_table)
-
-
-
-
-    
-
-    
-
 
     print("\nResults Table:")
     results_table = PrettyTable()
-    results_table.field_names = ["Symbol", "Probability", "Codeword", "Length"]
+    results_table.field_names = ["Symbol", "Frequrncy", "Probability", "Codeword", "Length"]
     for row in huffman.results_table():
         results_table.add_row(row)
     print(results_table)
