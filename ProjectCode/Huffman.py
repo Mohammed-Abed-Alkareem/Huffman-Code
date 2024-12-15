@@ -5,8 +5,12 @@ from docx import Document
 import mammoth
 
 class HuffmanCoding:
-    def __init__(self, text):
-        self.text = text.lower().replace("\n", "")  # Normalize the text
+    def __init__(self, text, modify_text=False):
+        
+        if modify_text:
+            text = text.lower().replace("\n", "")  # Normalize the text
+
+        self.text = text
         self.frequencies = self.calculate_frequencies()
         self.probabilities = self.calculate_probabilities()
         self.entropy = self.calculate_entropy()

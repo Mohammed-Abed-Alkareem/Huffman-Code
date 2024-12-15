@@ -24,7 +24,47 @@ if __name__ == "__main__":
     print("\nHuffman Coding Results:")
 
 
-    huffman = HuffmanCoding(text)
+    huffman = HuffmanCoding(text, modify_text=True)
+
+    print(f"Number of characters in the text after normalization: {len(huffman.text)}")
+    print(f"Number of unique characters in the text after normalization: {len(set(huffman.text))}")
+    print(len(huffman.text) == sum(huffman.frequencies.values()))
+    print(f"Number of characters in the text after normalization: {sum(huffman.frequencies.values())}")
+
+    print(f"Entropy: {huffman.entropy:.4f} bits/character")
+    print(f"Average Bits per Character: {huffman.average_bits_per_character():.4f}")
+    print(f"Total Bits (ASCII): {huffman.total_bits_ascii()}")
+    print(f"Total Bits (Huffman): {huffman.total_bits_huffman()}")
+    print(f"Compression Percentage: {huffman.compression_percentage():.2f}%")
+
+    print("\nFrequencies:")
+
+    frequencies_table = PrettyTable()
+    frequencies_table.field_names = ["Symbol", "Frequency"]
+    for char, freq in huffman.frequencies.items():
+        frequencies_table.add_row([char, freq])
+    print(frequencies_table)
+
+
+
+
+    
+
+    
+
+
+    print("\nResults Table:")
+    results_table = PrettyTable()
+    results_table.field_names = ["Symbol", "Probability", "Codeword", "Length"]
+    for row in huffman.results_table():
+        results_table.add_row(row)
+    print(results_table)
+
+
+
+
+### Without modifying the text
+    huffman = HuffmanCoding(text, modify_text=False)
 
     print(f"Number of characters in the text after normalization: {len(huffman.text)}")
     print(f"Number of unique characters in the text after normalization: {len(set(huffman.text))}")
