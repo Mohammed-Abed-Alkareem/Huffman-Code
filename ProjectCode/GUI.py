@@ -81,7 +81,7 @@ class HuffmanCodeGUI:
 
         self.footer_label = tk.Label(
             self.footer_frame,
-            text="Developed by: Jubran Khoury and Mohammad Abdelkareem",
+            text="Developed by: Jubran Khoury and Mohammed Abed Alkareem",
             bg="light blue",
             fg="black",
             font=("Arial", 10, "bold"),
@@ -96,7 +96,7 @@ class HuffmanCodeGUI:
             title="Choose a Word Document"
         )
         if file_path:
-            self.file_label.config(text=f"Selected File: {file_path}")
+            self.file_label.config(text=f"Selected File: {file_path.split('/')[-1]}")
             self.process_file(file_path)
         else:
             messagebox.showwarning("File Selection Error", "No file selected!")
