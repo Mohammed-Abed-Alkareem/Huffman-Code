@@ -5,7 +5,7 @@ from prettytable import PrettyTable
 if __name__ == "__main__":
     # Replace with the path to your .docx file
    #docx_file = r"C:\Users\HP\OneDrive\Desktop\Huffman-Code-main\ProjectCode\To+Build+A+Fire+by+Jack+London.docx"
- docx_file = "Huffman-Code\ProjectCode\To+Build+A+Fire+by+Jack+London.docx"
+   docx_file = "Huffman-Code\ProjectCode\To+Build+A+Fire+by+Jack+London.docx"
     with open(docx_file, "rb") as file:
         result = mammoth.extract_raw_text(file)
         text = result.value
